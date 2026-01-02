@@ -1,0 +1,15 @@
+Question 2: A withdrawal fails due to insufficient balance.
+
+1. Would you use a checked or unchecked exception?
+Use a checked exception (public class InsufficientBalanceException extends Exception) custom exception this will help in transaction process as it gives FAILED status to Transaction not crash the backend.
+public class InsufficientBalanceException extends RuntimeException {
+    public InsufficientBalanceException(String message) {
+        super(message);
+    }
+}
+
+2. Why is exception handling critical? 
+It prevents the backend from crashing when something goes wrong. In banking, it ensures that if an error occurs mid-transaction, the system stops safely without losing data or accidentally moving money and also saves the transaction process with FAILED status.
+
+3. How would a custom exception improve code clarity?
+Using a name like InsufficientBalanceException instead of a generic Error makes the code more clear to understand by team also. A developer reading the code immediately knows exactly what went wrong without taking much time through logs and saves time in debugging while testing.

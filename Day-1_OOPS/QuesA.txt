@@ -1,0 +1,32 @@
+1. Should balance be public or not? Justify
+No, the balance should definitely not be public it should be private. Making balance field private its is Encapsulated data and by using getter and setters we can set the balance and get the balance.
+
+If we make balance public, any other part of the program could change the value directly without checking if the change makes sense.
+
+2. How would you control deposits and withdrawals using methods?
+For deposits and withdrawals we can also use getters and setters methods to set and retrive the amount and according to we can perform operations on balance, using this we can have total control on the methods. Deposits and withdrawals also validate the amount if its > 0 to <= then entered amount.
+
+public class BankAccount {
+    private double balance; // Encapsulated data
+
+    // deposit method
+    public void deposit(double amount) { 
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    // withdraw method
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        } else {
+            System.out.println("Invalid transaction.");
+        }
+    }
+}
+
+3. How does encapsulation help enforce banking rules? 
+ENCAPSULATION - Process of binding bank account data into single unit, wrapping data and methods into single class 
+$ data hiding - internal data is hidden from outside, using private fields (encapsulated data)
+$ this gives controlled access on the data and also helps in enforces the banking rules

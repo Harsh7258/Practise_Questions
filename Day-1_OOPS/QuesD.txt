@@ -1,0 +1,21 @@
+Questions 4: What is polymorphism in Java?
+
+Polymorphism means one method, many forms, that can be achieved using method overriding.
+$ same method, different behaviour
+
+1. Explain compile-time vs runtime polymorphism.
+$ Method overloading (compile time polymorphism) - same method name different parameters in same class 
+Complier decides which method to call
+
+$ Method overriding (run time polymorphism) - A child class gives its own version of a parent's method by @Override annotation (Overriding) the method and giving it own implementation.
+
+2. Which one is achieved using method overriding?
+Run time overriding - Runtime polymorphism is achieved using method overriding.
+In shape example - Overriding: Each child class provides its own specific version of the draw() method and using @Override for own implementation of draw()
+
+3. Why is runtime polymorphism important in real applications?
+Runtime polymorphism is important because it lets a program decide which method to run at execution time, making code flexible, reusable, and easy to maintain.
+
+$ One interface, many behaviors
+$ New features can be added without changing existing code
+$ Makes programs scalable and easier to update

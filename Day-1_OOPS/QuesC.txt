@@ -1,0 +1,9 @@
+Question 3: An e-commerce system supports PhysicalProduct and DigitalProduct.
+
+1. What common behaviors would you abstract.
+To design PhysicalProduct (like a book) and DigitalProduct (like an eBook):
+Common Behaviors to Abstract: getPrice(), getName(), and displayProductDetails(). Both need a price and a name, regardless of whether they are delivered or downloaded.
+
+2. Would you use an abstract class or interface?
+Use an abstract class ( abstract class Product ) for common behaviors this is best.
+Because both products share data (fields like name and price). An abstract class write the code for displayBaseDetails() once and share it, whereas an interface is mostly for sharing method names without the code.
