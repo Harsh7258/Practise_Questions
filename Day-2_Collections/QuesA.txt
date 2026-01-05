@@ -1,0 +1,12 @@
+Question 1: You need to store a list of customer IDs where:
+        -   Order of insertion must be preserved
+        -   Duplicate IDs are allowed
+
+1. Which Java collection would you use and why?
+To store the list of customer IDs we can use List Inteface of collection framework. 
+$ An ArrayList is the standard implementation of the List interface, and it internally uses dynamic array to increase its size while maitaining the order and will allowed to store duplicates.
+
+2. What would change if duplicates were not allowed?
+If the requirement changes so that every customer ID must be unique, you should switch from a List to a LinkedHashSet.
+$ using Set interface of collection framework: Used to eliminate duplicate entries at the time of display.
+$ LinkedHashSet: maintain the insertion order and store value based on their hashcode so no duplication is alloweds

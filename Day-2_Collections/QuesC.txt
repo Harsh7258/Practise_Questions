@@ -1,0 +1,5 @@
+Question 3: When an ArrayList is created with capacity 25, its internal array can hold 25 elements.
+When an ArrayList is created with capacity 25, its internal array can hold 25 elements. Adding the 26th element exceeds the current capacity.
+$ ArrayList resizes by creating a new, larger array.
+$ Internally used new capacity formula: newCapacity = oldCapacity + (oldCapacity / 2)
+$ New capacity = 25 + (25 / 2) = 37, so new capacity or new size of the list will be of size = 37

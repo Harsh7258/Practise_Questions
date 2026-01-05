@@ -1,0 +1,14 @@
+Question 2: In a multi-threaded application, multiple threads update a shared collection.
+
+1. Why are normal collections like ArrayList or HashMap not thread-safe?
+These Collections are not thread safe because their performance is fast, built for speed but not built for multiple threads at the same time.
+$ multiple threads cause infinite loops thats why they are not thread thread-safe.
+
+2. Name one thread-safe collection in Java.
+One thread-safe collection in Java is ConcurrentHashMap.
+$ ConcurrentHashMap<K, V> map = new ConcurrentHashMap<>(); 
+
+3. When would you prefer a Concurrent collection over Collections.synchronizedList()? 
+Use concurrent collections when you need scalability and non-blocking access in multi-threaded environments.
+$ Few threads / simple case -> Collections.synchronizedList()
+$ Many threads / high performance -> Concurrent collections
