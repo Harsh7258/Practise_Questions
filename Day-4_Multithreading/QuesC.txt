@@ -1,0 +1,14 @@
+Question 3: Why is synchronization required in multi-threaded programs?
+Because multiple threads may access the same data at the same time thats when we need synchronization in multi threading.
+$ Use synchronization so only one thread accesses shared data at a time
+
+1. Explain the purpose of wait() and notify(). Show via an example
+Used for communication between threads 
+$ wait() - thread goes to sleep and releases the lock
+$ notify() - wakes up one waiting thread
+$ notifyAll() - wakes up all waiting threads
+
+2. Why must they be called inside a synchronized block?
+Because as they work on object locks 
+$ wait() releases the lock
+$ notify() does not release the lock immediately

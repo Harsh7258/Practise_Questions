@@ -1,0 +1,19 @@
+Question 2: You submit a task using ExecutorService.submit().
+
+1. What does the submit() method return?
+submit() method returns a future object, Future is like a promise -it represents the result of a task that will finish in the future.
+$ Future<Integer> future = executor.submit(task);
+
+2. How do you retrieve the result of the task?
+Just by calling the .get() method, Future.get() - get() returns the actual result
+$ It gives the value returned by call() method
+$ If the task is Runnable, get() returns null
+$ If the task is Callable, get() returns a value
+Ex - Integer result = future.get();
+
+3. What happens if Future.get() is called before the task is complete?
+The calling thread waits (blocks), the thread pauses, then it waits until the task finishes, After the completion - the result is returned
+ 
+System.out.println("Waiting...");
+Integer result = future.get(); // waits here
+System.out.println("Result: " + result); //This is called blocking behavior

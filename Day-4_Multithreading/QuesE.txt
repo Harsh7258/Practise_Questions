@@ -1,0 +1,17 @@
+Question 5: What is a deadlock in Java?
+Deadlock is a situation where two or more threads are locked forever, because each thread is waiting for a lock held by another thread.
+$ No thread can continue, Program hangs
+
+1. Explain a real-world scenario where a deadlock can occur. Can you show a piece of
+code where a deadlock can potentially occur.
+Two people and there are two resources
+$ Person A has Pen and wants Paper
+$ Person B has Paper and wants Pen
+$ Both wait forever - Deadlock
+
+2. Mention one way to prevent deadlocks in applications.
+One way is to always acquire locks in the same order 
+Other ones - 
+$ Avoid nested locks
+$ Use tryLock() (from ReentrantLock)
+$ Minimize synchronized blocks

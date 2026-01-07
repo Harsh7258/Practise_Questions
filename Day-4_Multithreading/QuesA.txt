@@ -1,0 +1,40 @@
+Question 1: What is the difference between creating a thread using Thread, Runnable, and
+ExecutorService?
+The difference between creating a thread using Thread, Runnable, and ExecutorService is that - 
+$ Thread using thread - you create a thread by extending Thread
+                        you override the run() method
+                        Start it using start()
+Ex - class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
+}
+
+$ Runnable - it is just a task, Thread is responsible for execution
+Ex - class MyTask implements Runnable {
+    public void run() {
+        System.out.println("Task running");
+    }
+}
+
+Thread t = new Thread(new MyTask());
+t.start();
+
+$ Executor service - You don’t create threads yourself, You submit tasks, ExecutorService manages threads for you, Uses a thread pool
+Ex - ExecutorService executor = Executors.newFixedThreadPool(2);
+
+executor.execute(() -> {
+    System.out.println("Task running");
+});
+
+executor.shutdown();
+
+1. Which approach is preferred in real applications and why?
+ExecutorService is preferred in real applications over Runnable and Thread. 
+$ No need to manually create and destroy threads
+$ Reuses threads - better performance
+$ Avoids too many threads - prevents memory issues
+
+2. What problems does ExecutorService solve compared to manual thread creation?
+Manual Threads - create threads again and again, but ExecutorService - Reuses threads
+Manual Threads - Hard to manage many threads, but ExecutorService    - Automatic management

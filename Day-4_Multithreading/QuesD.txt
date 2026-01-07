@@ -1,0 +1,19 @@
+Question 4: Why are collections like ArrayList and HashMap not thread-safe?
+ArrayList and HashMap are not thread safe as they dont use synchronization internally, multiple threads can modify them at the same time which causes data inconsistency, wrong values.
+$ They are not thread-safe for performance reasons - (Synchronization slows down single-threaded programs)
+
+1. Name one thread-safe collection.
+Thread safe collection - ConcurrentHashMap 
+
+2. When would you prefer ConcurrentHashMap over Collections.synchronizedMap()?
+Both are similar but with different core functionality
+$ Collections.synchronizedMap() - Map<Integer, String> map =
+    Collections.synchronizedMap(new HashMap<>());
+1. uses one lock for the entire map 
+2. only one thread can access it at a time
+
+$ ConcurrentHashMap - Map<Integer, String> map = new ConcurrentHashMap<>();
+1. Uses multiple locks internally
+2. Multiple threads can read/write at the same time, much faster and scalable
+
+$ ConcurrentHashMap is preferred over Collections.synchronizedMap() for High concurrency, Many read/write operations, Multi-threaded real-world applications (web apps, microservices)
