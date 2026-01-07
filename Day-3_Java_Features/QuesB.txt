@@ -1,0 +1,23 @@
+Question 2: Java introduced records to simplify data-carrying classes.
+
+1 What problems do records solve compared to traditional POJOs?
+Traditional POJOs class needed too much boilder plate code of generating -
+$ Fields, Constructor, Getters, equals(), hashCode(), toString()
+
+Records automatically generate:
+1. Constructor
+2. Getters (called accessors)
+3. equals(), hashCode()
+4. toString()
+
+$ Records are useful in API response, DTOs, Configuration data, and they are also immutable by default, POJOs are mutable 
+
+usage: 
+public record User(int id, String name) {} 
+
+2. When would you not use a record?
+Records are not for everything -
+$ Records are meant for data, not behavior-heavy objects
+$ If values must change      -  use a normal class.
+$ If inheritance is required -  use class.
+$ If only some fields define identity - avoid records (All fields are part of equality)

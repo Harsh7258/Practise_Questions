@@ -1,0 +1,29 @@
+Question 4: What is a Stream in Java?
+A Stream is a way to process data from a collection in a sequence of operations.
+$ It does not store data
+$ It works on data from a source (List, Set, Array, etc.)
+$ It is mainly used for filtering, mapping, and aggregating data
+
+1. How is it different from a collection?
+Collections store data, Streams process data.
+Collections focuses on data stroing but Streams focuses on processing the data that is stored in data source like List, set, array, etc.
+
+2. Explain the difference between intermediate and terminal operations.
+Intermediate Operations - 
+$ Return a Stream
+$ Do not execute immediately
+$ Can be chained
+$ numbers.stream().filter((n) -> n > 2).map((n) -> n * 2); // nothing runs yet
+$ Examples: filter(), map(), sorted(), distinct() 
+
+Terminal Operations - 
+$ Return a result or void
+$ Trigger execution of the stream
+$ End the stream pipeline
+$ numbers.stream().filter((n) -> n > 2).map((n) -> n * 2).forEach(System.out::println); // prints the numbers filtered and mapped
+$ Examples: forEach(), collect(), reduce(), count()
+
+3. Why are streams considered lazy?
+Streams do nothing until a terminal operation is called, thats way it is considered lazy.
+$ Better performance
+$ Processes only required elements

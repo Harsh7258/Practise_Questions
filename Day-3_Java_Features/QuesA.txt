@@ -1,0 +1,21 @@
+Question 1: You are writing a utility method that processes a collection of numeric values.
+1. How would you restrict the generic type to only numbers?
+Using the bounded generics we can restrict the geenric type ton only numbers.
+
+class NumberUtils<T extends Number> {
+    void print(T value) {
+        System.out.println(value);
+    }
+}
+
+$ T must be a Number or its subclass
+$ Allowed: Integer, Double, Long, Float
+$ Not allowed: String, Object
+$ Usage: NumberUtils<Integer> n1 = new NumberUtils<>();
+        NumberUtils<Double> n2 = new NumberUtils<>();
+
+2. Explain when to use <? extends Number> vs <? super Integer>.
+Extends and super keywords that are used when to apply set of rules -
+$ Producer -> extends - Accepts Number or any subclass of Number, only read values
+$ Consumer -> super - Accepts Integer or its parent classes, add/write values
+

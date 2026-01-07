@@ -1,0 +1,38 @@
+Question 3: What is a functional interface?
+A functional interface is an interface that has exactly one abstract method. @FunctionalInterface annotation is optional, but it helps in applications
+
+$ It can have default methods
+$ It can have static methods
+$ But only one abstract method
+
+1. Name two built-in functional interfaces.
+Java provides many functional interfaces in java.util.function -
+
+1. Predicate<T> - takes one input, returns boolean
+2. Function<T, R> - takes input T, returns result R
+
+2. Show how a lambda expression improves readability compared to an anonymous
+class.
+
+This is the Predicate<T> with using class
+
+public class PredicateEx {
+    public static void main(String[] args) {
+
+        Predicate<Integer> isEven = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer n) {
+                return n % 2 == 0;
+            }
+        };
+
+        System.out.println(isEven.test(4)); // true
+        System.out.println(isEven.test(5)); // false
+    }
+}
+
+$ But using lambda expression we can replace anonymous classes by removing unnecessary syntax while keeping the same behavior.
+
+Predicate<Integer> isEven = ((n) -> n % 2 == 0);
+System.out.println(isEven.test(4)); // true
+System.out.println(isEven.test(5)); // false
